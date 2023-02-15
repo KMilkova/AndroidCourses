@@ -81,3 +81,4 @@ fun task4c() {
     }
     println(marks[35..37])
 }
+
