@@ -63,3 +63,4 @@ fun task3b() {
         print("$i ")
     }
 }
+
