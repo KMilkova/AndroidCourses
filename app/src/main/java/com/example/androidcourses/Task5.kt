@@ -30,3 +30,4 @@ data class Player(val name:String,val rank:String,val numbersOfWins:Int, val los
         return "Name: $name, rank: $rank, numbers of wins: $numbersOfWins, losses: $losses"
     }
 }
+
