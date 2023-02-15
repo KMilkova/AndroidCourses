@@ -146,4 +146,3 @@ fun String.indexOfMax(a: IntArray): Int? {
 
 //задание 2f
 
-
