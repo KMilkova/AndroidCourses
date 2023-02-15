@@ -29,4 +29,3 @@ fun main() {
 
 //задание 1d
 const val constantVariable = "constString"
-
