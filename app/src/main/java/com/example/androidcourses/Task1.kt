@@ -26,6 +26,5 @@ fun main() {
     val nullValue : Int? = readLine() as? Int
 
 }
-
 //задание 1d
 const val constantVariable = "constString"
