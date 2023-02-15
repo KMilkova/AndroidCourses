@@ -58,3 +58,4 @@ fun functionWithMoreThanOneCatch(firstNumber: Int, secondNumber: Int) {
         println(e.message)
     }
 }
+
