@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdditionalTaskActivity">
+
+<!--    кнопки-->
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <Button
+            android:id="@+id/roundedEdgesBtn"
+            style="@style/buttons"
+            android:background="@drawable/rounded_edges_btn"
+            android:text="Button"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="32dp" />
+
+        <Button
+            android:id="@+id/verticalGradientBtn"
+            style="@style/buttons"
+            android:background="@drawable/vertical_gradient_btn"
+            android:text="vertical gradient"
+            tools:ignore="ButtonStyle"
+            tools:layout_editor_absoluteY="32dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/first">
+
+        <Button
+            android:id="@+id/horizontalGradientBtn"
+            style="@style/buttons"
+            android:background="@drawable/horizontal_gradient_btn"
+            android:text="horizontal gradient"
+
+            tools:layout_editor_absoluteY="32dp" />
+
+        <Button
+            android:id="@+id/shapeBtn"
+            style="@style/buttons"
+            android:background="@color/ant_red"
+            android:elevation="8dp"
+            android:stateListAnimator="@null"
+            android:text="shape"
+            android:translationZ="4dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/circleBtn"
+        style="@style/buttonEditTheme"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_btn"
+        android:text="circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lst" />
+
+    <!--    картинки-->
+
+    <LinearLayout
+        android:id="@+id/pictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@+id/circleBtn"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/_673361157green_tropical_island"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearanceOverlay="@style/roundCornerImage" />
+
+        <ImageView
+            android:id="@+id/degreeImageView"
+            android:layout_width="97dp"
+            android:layout_height="98dp"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/_673361157green_tropical_island"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="466dp" />
+
+
+    </LinearLayout>
+
+    <!--    нажатие-->
+    <LinearLayout
+        android:id="@+id/layoutForView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pictures"
+        android:background="@drawable/border"
+        >
+
+        <ImageView
+            android:id="@+id/view"
+            android:layout_width="87dp"
+            android:layout_height="80dp"
+            android:src="@drawable/palm_tree_holidays_icon_246590"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click"
+            />
+
+    </LinearLayout>
+
+    <!--    текст-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutForView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="bold text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="italic text"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/crossText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="cross text"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
