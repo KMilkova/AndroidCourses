@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondTaskActivity">
+
+    <EditText
+        android:id="@+id/nameEditText"
+        style="@style/nameEditTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/surnameEditText"
+        style="@style/nameEditTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+
+    <EditText
+        android:id="@+id/phoneEditText"
+        style="@style/phoneEditTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/surnameEditText" />
+
+    <EditText
+        android:id="@+id/ageEditText"
+        style="@style/ageEditTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneEditText" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ageEditText">
+
+        <Button
+            android:id="@+id/writeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/buttonEditTheme"
+            android:enabled="false"
+            android:text="@string/write" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/buttonEditTheme"
+            android:enabled="false"
+            android:text="@string/clear" />
+
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/table"
+        app:layout_constraintTop_toBottomOf="@id/buttons">
+        <TableRow>
+            <TextView
+                android:layout_weight="0.5"
+                android:text="@string/nameTextView" />
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="0.5"
+                android:text="@string/surnameTextView" />
+            <TextView
+                android:id="@+id/surnameTextView"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="0.5"
+                android:text="@string/phoneTextView" />
+            <TextView
+                android:id="@+id/phoneTextView"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_weight="0.5"
+                android:text="@string/ageTextView" />
+            <TextView
+                android:id="@+id/ageTextView"
+                android:layout_weight="1"
+                android:text="" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
