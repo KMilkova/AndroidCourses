@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +13,32 @@
         android:theme="@style/Theme.AndroidCourses"
         tools:targetApi="31">
         <activity
-            android:name=".FistTaskActivity"
+            android:name=".TaskFourActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.AndroidCourses.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+      <activity
+            android:name=".TaskTwoActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="sensor"
+            android:theme="@style/Theme.AndroidCourses.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TaskThreeFirstActivity"
+            android:configChanges="orientation"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AndroidCourses.NoActionBar">
@@ -23,38 +49,81 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondTaskActivity"
+            android:name=".TaskThreeSecondActivity"
+            android:configChanges="orientation"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AndroidCourses.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name=".ThirdTaskActivity"
+            android:name=".TaskThreeThirdActivity"
+            android:configChanges="orientation"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AndroidCourses.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity
-            android:name=".AdditionalTaskActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.AndroidCourses.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                <activity
+                    android:name=".FirstForTaskOneActivity"
+                    android:exported="true"
+                    android:label="@string/app_name"
+                    android:theme="@style/Theme.AndroidCourses.NoActionBar">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+
+                        <category android:name="android.intent.category.LAUNCHER" />
+                    </intent-filter>
+                </activity>
+                <activity
+                    android:name=".SecondForTaskOneActivity"
+                    android:exported="true"
+                    android:label="@string/app_name"
+                    android:theme="@style/Theme.AndroidCourses.NoActionBar">
+                </activity>
+        <!--        <activity-->
+        <!--            android:name=".FistTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name=".SecondTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name=".ThirdTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name=".AdditionalTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
     </application>
 
 </manifest>
