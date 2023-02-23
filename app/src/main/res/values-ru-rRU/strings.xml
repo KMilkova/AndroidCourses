@@ -20,4 +20,7 @@
     <string name="surnameTextView">Фамилия</string>
     <string name="phoneTextView">Телефон</string>
     <string name="ageTextView">Возраст</string>
+    <string name="gender">Пол</string>
+    <string name="email">Почта</string>
+    <string name="birthday">Дата рождения</string>
 </resources>

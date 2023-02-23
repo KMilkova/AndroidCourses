@@ -20,4 +20,7 @@
     <string name="surnameTextView">Surname</string>
     <string name="phoneTextView">Phone</string>
     <string name="ageTextView">Age</string>
+    <string name="gender">Gender</string>
+    <string name="email">Email</string>
+    <string name="birthday">Birthday</string>
 </resources>
