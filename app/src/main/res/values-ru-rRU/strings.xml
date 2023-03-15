@@ -20,4 +20,13 @@
     <string name="surnameTextView">Фамилия</string>
     <string name="phoneTextView">Телефон</string>
     <string name="ageTextView">Возраст</string>
+    <string name="birthday">birthday</string>
+    <string name="delete">Delete</string>
+    <string name="next_screen">Next Screen</string>
+    <string name="grid">Grid</string>
+    <string name="linear">Linear</string>
+    <string name="additional_task_activity">Additional task Activity</string>
+    <string name="cute_video_with_puppy">Cute video with puppy</string>
+    <string name="instagram">Instagram</string>
+    <string name="get_compliment">Get compliment</string>
 </resources>
