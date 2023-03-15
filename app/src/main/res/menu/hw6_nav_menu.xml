@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/complimentItem"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/get_compliment" />
+
+    <item
+        android:id="@+id/instaItem"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/instagram" />
+
+    <item
+        android:id="@+id/youtubeItem"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/cute_video_with_puppy" />
+
+    <item
+        android:id="@+id/additionalTaskActivity"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/additional_task_activity" />
+
+</menu>
