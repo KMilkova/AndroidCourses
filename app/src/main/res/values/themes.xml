@@ -41,7 +41,6 @@
     <style name="phoneEditTheme" parent="EditMainTheme">
         <item name="android:inputType">phone</item>
         <item name="android:maxLines">1</item>
-        <item name="android:maxLength">7</item>
     </style>
 
     <style name="ageEditTheme" parent="EditMainTheme">
