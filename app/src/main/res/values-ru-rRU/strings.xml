@@ -29,4 +29,6 @@
     <string name="cute_video_with_puppy">Cute video with puppy</string>
     <string name="instagram">Instagram</string>
     <string name="get_compliment">Get compliment</string>
+    <string name="save_pictures_in_internal_storage">Save pictures in internal storage</string>
+    <string name="save_pictures_in_external_storage">Save pictures in external storage</string>
 </resources>

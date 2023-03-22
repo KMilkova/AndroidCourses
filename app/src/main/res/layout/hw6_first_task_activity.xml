@@ -92,20 +92,6 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--        <EditText-->
-        <!--            android:id="@+id/phoneEditText"-->
-        <!--            style="@style/phoneEditTheme"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:hint="@string/phone" />-->
-
-        <!--        <EditText-->
-        <!--            android:id="@+id/ageEditText"-->
-        <!--            style="@style/ageEditTheme"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:hint="@string/age" />-->
-
         <TextView
             android:id="@+id/dateEditText"
             style="@style/EditMainTheme"
@@ -126,19 +112,11 @@
             android:text="@string/btn1"
             android:textSize="14sp" />
     </LinearLayout>
-    <!--        <ListView-->
-    <!--            android:id="@+id/infoList"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="200dp"-->
-    <!--            app:layout_constraintStart_toStartOf="parent"-->
-    <!--            app:layout_constraintEnd_toEndOf="parent"-->
-    <!--            app:layout_constraintTop_toBottomOf="@id/mainLayout" />-->
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/personList"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@+id/mainLayout" />
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/nextScreen" />
 
 
     <Button
@@ -150,8 +128,7 @@
         android:layout_marginRight="15dp"
         android:enabled="false"
         android:text="@string/next_screen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personList"
+        app:layout_constraintTop_toBottomOf="@+id/mainLayout"
         android:textSize="14sp"/>
 
 
