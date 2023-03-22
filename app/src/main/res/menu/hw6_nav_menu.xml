@@ -23,4 +23,13 @@
         android:icon="@drawable/wasp_bee_icon_246571"
         android:title="@string/additional_task_activity" />
 
+    <item
+        android:id="@+id/savePicturesInInternalStorage"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/save_pictures_in_internal_storage" />
+
+    <item
+        android:id="@+id/savePicturesInExternalStorage"
+        android:icon="@drawable/wasp_bee_icon_246571"
+        android:title="@string/save_pictures_in_external_storage" />
 </menu>
