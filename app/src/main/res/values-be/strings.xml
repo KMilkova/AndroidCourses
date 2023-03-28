@@ -31,4 +31,20 @@
     <string name="get_compliment">Get compliment</string>
     <string name="save_pictures_in_internal_storage">Save pictures in internal storage</string>
     <string name="save_pictures_in_external_storage">Save pictures in external storage</string>
+    <string name="order_by_name">Order by name</string>
+    <string name="order_by_age">Order by age</string>
+    <string name="clear_order">Clear order</string>
+    <string name="show_5_elements">Show 5 elements</string>
+    <string name="info">Info</string>
+    <string name="search">Search</string>
+    <string name="search_by_person_surname">Search by person surname</string>
+    <string name="show_all">Show all</string>
+    <string name="show_persons_with_address">Show persons with address</string>
+    <string name="city">city</string>
+    <string name="street">street</string>
+    <string name="house_number">house number</string>
+    <string name="add_address">Add address</string>
+    <string name="address">Address</string>
+    <string name="save_address">Save address</string>
+    <string name="show_all_el">Show all</string>
 </resources>

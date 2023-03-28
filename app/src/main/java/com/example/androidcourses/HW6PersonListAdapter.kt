@@ -1,13 +1,19 @@
 package com.example.androidcourses
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidcourses.HW6FirstTaskActivity.Companion.DATE_FORMAT
-import com.example.androidcourses.HW6FirstTaskActivity.Companion.FILE_NAME
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.PERSON_AGE
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.PERSON_BIRTHDAY
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.PERSON_NAME
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.PERSON_PHONE
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.PERSON_SURNAME
+import com.example.androidcourses.HW8SecondTaskActivity.Companion.SHARED_PREFERENCES_NAME
 import com.example.androidcourses.databinding.Hw6ItemPersonBinding
 import java.util.*
 
@@ -35,7 +41,27 @@ class HW6PersonListAdapter(
                 ).format(person.birthday)
                 binding.deleteBtn.setOnClickListener {
                     adapter.deleteItem(adapterPosition)
-                    adapter.updateFile()
+                    adapter.updateDatabase(person.id)
+                }
+
+                binding.showInfoAboutElement.setOnClickListener {
+                    val shared = adapter.context.getSharedPreferences(
+                        SHARED_PREFERENCES_NAME,
+                        Context.MODE_PRIVATE
+                    )
+                    shared.edit().putString(PERSON_NAME, person.name)
+                        .putString(PERSON_SURNAME, person.surname)
+                        .putInt(PERSON_PHONE, person.phone)
+                        .putInt(PERSON_AGE, person.age)
+                        .putString(
+                            PERSON_BIRTHDAY, android.icu.text.SimpleDateFormat(
+                                DATE_FORMAT,
+                                Locale.getDefault()
+                            ).format(person.birthday)
+                        ).apply()
+
+                    val intent = Intent(adapter.context, HW8SecondTaskActivity::class.java)
+                    adapter.context.startActivity(intent)
                 }
 
                 when (person.age) {
@@ -64,44 +90,28 @@ class HW6PersonListAdapter(
         holder.bind(personList[position])
     }
 
-    fun clearInfo(list: MutableList<HW6PersonList>) {
-        list.clear()
-    }
-
     fun deleteItem(position: Int) {
         personList.removeAt(position)
         notifyItemRemoved(position)
         notifyItemRangeChanged(position, itemCount)
     }
 
-    private fun clearFile() {
-        context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use {
-            it.write("".toByteArray())
-        }
-    }
-
-    fun updateFile() {
-        clearFile()
-
-        personList.forEach { _ ->
-            context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use {
-                it.write(
-                    replace(personList.toString()).toByteArray()
-                )
-            }
-        }
+    fun updateDatabase(id: Int) {
+        val database = HW8DatabaseHelper(context)
+        val sqlDb = database.readableDatabase
+        sqlDb.delete(
+            HW8DatabaseHelper.TABLE_NAME,
+            HW8DatabaseHelper.COLUMN_ID + "=" + "?",
+            arrayOf("$id")
+        )
 
     }
 
-    private fun replace(info: String): String {
-        return info.replace("[", "").replace("]", "").replace(", ", "")
+    fun clearInfo(list: MutableList<HW6PersonList>) {
+        list.clear()
     }
 
     override fun getItemCount() = personList.size
-
-    fun getItems(): MutableList<HW6PersonList> {
-        return personList
-    }
 
 
     fun addItems(person: HW6PersonList) {

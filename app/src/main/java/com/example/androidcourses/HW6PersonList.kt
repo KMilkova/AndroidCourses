@@ -8,6 +8,7 @@ import java.util.Date
 
 @RequiresApi(Build.VERSION_CODES.N)
 data class HW6PersonList(
+    val id:Int,
     val name: String,
     val surname: String,
     val phone: Int,
