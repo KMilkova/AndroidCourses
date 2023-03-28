@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:background="@color/pink">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.1" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2"
+                    android:text="@string/name" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/surname" />
+
+                <TextView
+                    android:id="@+id/surnameTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2"
+                    android:text="@string/surname" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/age" />
+
+                <TextView
+                    android:id="@+id/ageTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2"
+                    android:text="@string/age" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/phone" />
+
+                <TextView
+                    android:id="@+id/phoneTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2"
+                    android:text="@string/phone" />
+            </TableRow>
+
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/birthday" />
+
+                <TextView
+                    android:id="@+id/birthdayTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2"
+                    android:text="@string/birthday" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/city" />
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/street" />
+
+                <TextView
+                    android:id="@+id/streetTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="0.5"
+                    android:text="@string/house_number" />
+
+                <TextView
+                    android:id="@+id/houseNumberTextView"
+                    style="@style/TextViewForHW8"
+                    android:layout_weight="2" />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
