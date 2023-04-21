@@ -27,4 +27,13 @@
     <string name="address">Address</string>
     <string name="save_address">Save address</string>
     <string name="show_all_el">Show all</string>
+    <string name="email">email</string>
+    <string name="category">category</string>
+    <string name="description">description</string>
+    <string name="title">title</string>
+    <string name="price">price</string>
+    <string name="rating">rating</string>
+    <string name="update">Update</string>
+    <string name="response">Response</string>
+    <string name="add">Add</string>
 </resources>
