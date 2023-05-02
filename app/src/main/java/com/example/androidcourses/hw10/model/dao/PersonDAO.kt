@@ -1,12 +1,14 @@
-package com.example.androidcourses.room.dao
+package com.example.androidcourses.hw10.model.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.androidcourses.room.entity.Person
+import com.example.androidcourses.hw10.model.entity.Person
 
 @Dao
 interface PersonDAO {
+
     @Query("SELECT * FROM person_table")
-    fun getAll(): List<Person>
+    fun getAllEl(): LiveData<List<Person>>
 
     @Query("SELECT * FROM person_table WHERE person_name LIKE :name")
     fun getPersonByName(name: String): List<Person>
