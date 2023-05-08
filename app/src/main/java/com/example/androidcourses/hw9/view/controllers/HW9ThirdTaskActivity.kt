@@ -1,4 +1,4 @@
-package com.example.androidcourses.hw9
+package com.example.androidcourses.hw9.view.controllers
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,14 +8,18 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidcourses.databinding.Hw9AddItemBinding
-import com.example.androidcourses.hw9.shop.Item
-import com.example.androidcourses.hw9.shop.Rating
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.androidcourses.hw9.RetrofitInterface
+import com.example.androidcourses.hw9.model.Item
+import com.example.androidcourses.hw9.model.Rating
+import com.example.androidcourses.hw9.utils.Constants
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class HW9ThirdTaskActivity : AppCompatActivity() {
     lateinit var binding: Hw9AddItemBinding
+    private var myCompositeDisposable: CompositeDisposable? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = Hw9AddItemBinding.inflate(layoutInflater)
@@ -76,52 +80,50 @@ class HW9ThirdTaskActivity : AppCompatActivity() {
 
         val item = Item(
             category,
-            DESCRIPTION,
+            Constants.DESCRIPTION,
             0,
-            IMAGE_URL,
+            Constants.IMAGE_URL,
             price,
             rating,
             title
         )
-        val retrofit = HW9FirsTaskActivity.initRetrofit()
+        val retrofit = Constants.initRetrofit()
         val service = retrofit.create(RetrofitInterface::class.java)
-        val call = service.saveItem(item)
+        myCompositeDisposable = CompositeDisposable()
 
-        call.enqueue(object : Callback<Item> {
+        val disposable = service.saveItem(item).subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Toast.makeText(
+                        this@HW9ThirdTaskActivity,
+                        Constants.DATA_ADD_MESSAGE,
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
 
-            override fun onResponse(call: Call<Item>, response: Response<Item>) {
-                Toast.makeText(this@HW9ThirdTaskActivity, DATA_ADD_MESSAGE, Toast.LENGTH_SHORT)
-                    .show()
+                    binding.idLoadingPB.visibility = View.GONE
+                    binding.category.setText("")
+                    binding.price.setText("")
+                    binding.title.setText("")
+                    binding.rating.setText("")
 
-                binding.idLoadingPB.visibility = View.GONE
-                binding.category.setText("")
-                binding.price.setText("")
-                binding.title.setText("")
-                binding.rating.setText("")
+                    binding.result.text = printRespondResult(it)
+                },
+                {
+                    binding.result.text = Constants.ERROR_MESSAGE
+                }
+            )
 
-                binding.result.text = printRespondResult(response)
-            }
 
-            override fun onFailure(call: Call<Item>, t: Throwable) {
-                binding.result.text = HW9FirsTaskActivity.ERROR_MESSAGE + t.message
-            }
-        })
+        myCompositeDisposable?.add(disposable)
     }
 
-    fun printRespondResult(responseItem: Response<Item>): String {
-        return RESPONSE_CODE + responseItem.code() +
-                TITLE + responseItem.body()?.title +
-                CATEGORY + responseItem.body()?.category +
-                PRICE + responseItem.body()?.price
+    private fun printRespondResult(responseItem: Item): String {
+        return Constants.RESPONSE_CODE + responseItem +
+                Constants.TITLE + responseItem.title +
+                Constants.CATEGORY + responseItem.category +
+                Constants.PRICE + responseItem.price
     }
 
-    companion object {
-        const val DATA_ADD_MESSAGE = "Data added to API"
-        const val RESPONSE_CODE = "Response Code : "
-        const val TITLE = "\ntitle : "
-        const val CATEGORY = "\ncategory : "
-        const val PRICE = "\nprice : "
-        const val DESCRIPTION = "smth"
-        const val IMAGE_URL = "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-    }
 }

@@ -1,4 +1,4 @@
-package com.example.androidcourses.hw9
+package com.example.androidcourses.hw9.view.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.androidcourses.databinding.Hw9ItemBinding
-import com.example.androidcourses.hw9.shop.Item
+import com.example.androidcourses.hw9.view.controllers.HW9SecondTaskActivity
+import com.example.androidcourses.hw9.model.Item
+import com.example.androidcourses.hw9.utils.Constants
 
 class HW9ItemsAdapter(private val items: List<Item>, private val context: Context) :
     RecyclerView.Adapter<HW9ItemsAdapter.ViewHolder>() {
@@ -28,10 +30,10 @@ class HW9ItemsAdapter(private val items: List<Item>, private val context: Contex
                 infoBtn.setOnClickListener {
 
                     val shared = adapter.context.getSharedPreferences(
-                        HW9FirsTaskActivity.SHARED_PREFERENCES_NAME,
+                        Constants.SHARED_PREFERENCES_NAME,
                         Context.MODE_PRIVATE
                     )
-                    shared.edit().putInt(HW9FirsTaskActivity.ITEM_ID, item.id)
+                    shared.edit().putInt(Constants.ITEM_ID, item.id)
                         .apply()
 
                     val intent =

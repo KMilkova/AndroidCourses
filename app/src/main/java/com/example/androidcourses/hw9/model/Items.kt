@@ -1,4 +1,4 @@
-package com.example.androidcourses.hw9.shop
+package com.example.androidcourses.hw9.model
 
 import com.google.gson.annotations.SerializedName
 
