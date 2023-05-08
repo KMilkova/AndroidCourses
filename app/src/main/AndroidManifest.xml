@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".hw10.model.App"
@@ -16,7 +17,7 @@
         android:theme="@style/Theme.AndroidCourses"
         tools:targetApi="31">
         <activity
-            android:name=".hw11.HW11MainActivity"
+            android:name=".hw9.view.controllers.HW9FirsTaskActivity"
             android:exported="true"
             android:theme="@style/Theme.AndroidCourses.NoActionBar">
             <intent-filter>
@@ -25,76 +26,81 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".hw10.view.activities.HW10MainActivity"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".hw9.view.controllers.HW9SecondTaskActivity" />
+        <activity android:name=".hw9.view.controllers.HW9ThirdTaskActivity" />
+        <activity android:name=".hw12.HW12FirstTaskActivity" />
+        <activity android:name=".hw12.HW12SecondTaskActivity" />
+        <activity android:name=".hw12.HW12ThirdTaskActivity"/>
+        <activity android:name=".hw12.HW12FourthTaskActivity"/>
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity android:name=".hw10.view.activities.HW10AddressInfoActivity" />-->
-<!--        <activity android:name=".hw10.view.activities.HW10ChooseAddressActivity" />-->
-<!--        <activity android:name=".hw10.view.activities.HW10FullInfoActivity" />-->
-
-        <!--        <activity android:name=".hw9.HW9SecondTaskActivity"/>-->
-<!--        <activity android:name=".hw9.HW9ThirdTaskActivity"/>-->
 
         <!--        <activity-->
-<!--            android:name=".HW6FirstTaskActivity"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--            android:name=".hw10.view.activities.HW10MainActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity android:name=".HW6SecondActivity" />-->
-<!--        <activity android:name=".HW8SecondTaskActivity" />-->
-<!--        <activity-->
-<!--            android:name=".HW8ThirdTaskPersonActivity"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity android:name=".hw10.view.activities.HW10AddressInfoActivity" />-->
+        <!--        <activity android:name=".hw10.view.activities.HW10ChooseAddressActivity" />-->
+        <!--        <activity android:name=".hw10.view.activities.HW10FullInfoActivity" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity android:name=".HW8ThirdTaskAddressActivity"/>-->
-<!--        <activity android:name=".HW8ThirdTaskChooseAddressActivity"/>-->
-<!--        <activity android:name=".HW8ThirdTaskFullInfoActivity"/>-->
 
         <!--        <activity-->
-<!--            android:name=".SecondTaskActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/app_name"-->
-<!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--            android:name=".HW6FirstTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-<!--        <activity-->
-<!--            android:name=".ThirdTaskActivity"-->
-<!--            android:exported="true"-->
-<!--            android:label="@string/app_name"-->
-<!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity android:name=".HW6SecondActivity" />-->
+        <!--        <activity android:name=".HW8SecondTaskActivity" />-->
+        <!--        <activity-->
+        <!--            android:name=".HW8ThirdTaskPersonActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity android:name=".HW8ThirdTaskAddressActivity"/>-->
+        <!--        <activity android:name=".HW8ThirdTaskChooseAddressActivity"/>-->
+        <!--        <activity android:name=".HW8ThirdTaskFullInfoActivity"/>-->
+
+        <!--        <activity-->
+        <!--            android:name=".SecondTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name=".ThirdTaskActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="@string/app_name"-->
+        <!--            android:theme="@style/Theme.AndroidCourses.NoActionBar">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
         <activity
             android:name=".AdditionalTaskActivity"
             android:exported="true"
-            android:theme="@style/Theme.AndroidCourses.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.AndroidCourses.NoActionBar"></activity>
     </application>
 
 </manifest>
